@@ -6,7 +6,7 @@ This respository contains an in-progress paper that will document the compositio
 Department of Earth Sciences, University of Bristol, Bristol BS8 1RJ, UK.
 <dino@miketaylor.org.uk>
 
-Feel free to read [the in-progress manuscript](Carnegie-Diplodocus-casts.docx).
+Feel free to read [the in-progress manuscript](Taylor-Carnegie-Diplodocus-casts.docx).
 
 Anyone is welcome to [file issues](https://github.com/MikeTaylor/palaeo-casts/issues).
 
