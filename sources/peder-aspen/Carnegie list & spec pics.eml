@@ -1,0 +1,100 @@
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:a05:7022:923:b0:87:f77a:aa1e with SMTP id bs35csp1526779dlb;
+        Sun, 29 Sep 2024 12:57:23 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IExNDzuGItlpX1HZKvSMacwZHhsTm2o8xa6DxPMWKqcoWdnMf2lGsIxkxOze5AUdi6g7FO2
+X-Received: by 2002:a5d:668a:0:b0:374:c92e:f69f with SMTP id ffacd0b85a97d-37cd5ab728amr5937480f8f.16.1727639842318;
+        Sun, 29 Sep 2024 12:57:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1727639842; cv=none;
+        d=google.com; s=arc-20240605;
+        b=SEnpjEs3322kdiE1nwJfLKh0RwPjnwerlIFRmuu+hKKF7uPj6o1IHr3r2FlrZ88TZE
+         MWacZf/nqlEKhfDdCUnUaSPCHVFqkB/gN/iyQvrZAgtE+gtneVUccT12BmwoMOcOJPOU
+         DInkPbo0DLjq5Rm75+pkbT3AO4EFyWPJ+AnwKIrzFA4GqiQ9NWyHxRoLf9TQSMbpzhvv
+         8VRKrm2I3Bkg2xXj7SfuYmlCX4MwU7UMn/x6D19J67jMRUr6sjxCrnHRuPxxtoUedSXL
+         DWIo8VUskPxe/tiQatQHF4WmVmYYXsrR/3xgGOT+Webr2hUaqkyjpbqnvh7eOX8uX391
+         2TVw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:date:message-id:subject:mime-version:from:dkim-signature;
+        bh=Mfoyeu0GAkW5TP1yC7U+dsZLpi3B+CrSMufBujwnY3M=;
+        fh=qBUigc77c2JZ/Xsqfpl0BCLzxGvN93WL6Td5C0ZuEKo=;
+        b=lKAboEjFh43d4O89899yTa/aoygGIJGOdoTQue//3YEcWZab6T5jzyPNMfvMAMyquT
+         ooYw9UXvX1AWjuIMOBeS5C6ifcHm6uuXdIc/S38FrAPUyGFofHgiRU2jfukJUB7IjMG5
+         0J5tkJSYzA5J/imtTaDHOrosRmJmfKKL3wr8gh/ML0KcEMUl/XCNmEUa7r2xxbXYGchZ
+         6mNKzbe/B2wlbs0iFaZKPV6V8uCIUJMoRN6oFtAlug7NJHeH8Awrvxgc/9fhjOCQt8Wu
+         lX/PM6wUrNXpcZn573qICjM8eSiQNjzF8rrEmg3BOpzg5CQCzUNYOEQUHjG8eYStMjPN
+         c1fw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@tiscali.co.uk header.s=2105 header.b=BDHjLhNm;
+       spf=pass (google.com: domain of paspen@tiscali.co.uk designates 62.24.135.133 as permitted sender) smtp.mailfrom=paspen@tiscali.co.uk;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tiscali.co.uk
+Return-Path: <paspen@tiscali.co.uk>
+Received: from smtp-out-5.tiscali.co.uk (smtp-out-5.tiscali.co.uk. [62.24.135.133])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-37cd56b0abasi2831245f8f.291.2024.09.29.12.57.21
+        for <sauropoda@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 29 Sep 2024 12:57:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of paspen@tiscali.co.uk designates 62.24.135.133 as permitted sender) client-ip=62.24.135.133;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tiscali.co.uk header.s=2105 header.b=BDHjLhNm;
+       spf=pass (google.com: domain of paspen@tiscali.co.uk designates 62.24.135.133 as permitted sender) smtp.mailfrom=paspen@tiscali.co.uk;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tiscali.co.uk
+Received: from smtpclient.apple ([78.145.243.174])
+	by smtp.talktalk.net with SMTP
+	id v02isJS02bXSXv02isX3sT; Sun, 29 Sep 2024 20:57:21 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=tiscali.co.uk;
+	s=2105; t=1727639841;
+	bh=or8FfD9WFO+gL3XcQbBmmXHAfyX/mrI83W09b1Z9urs=;
+	h=From:Subject:Date:To;
+	b=BDHjLhNmgttbVpq8AP3cndL6UUz/jtmzG/3mYKCOkWbg3oL3hX19r/Y6DrheG4Zz+
+	 1UR9VeC6KB0TEhpcXi/a+oQkapf4HNyN9i+Aw/xnGQgYptpQuZYDV5l8Ej2bTYnjEa
+	 acdBzN6uAMBtXbzy9kRKT9YtEdKHiuYMC1YlqKz0=
+X-Originating-IP: [78.145.243.174]
+From: Peder Aspen <paspen@tiscali.co.uk>
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3776.700.51\))
+Subject: Carnegie list & spec pics
+Message-Id: <050871D8-1658-4555-A93C-D500703F175D@tiscali.co.uk>
+Date: Sun, 29 Sep 2024 20:57:10 +0100
+To: sauropoda@gmail.com
+X-Mailer: Apple Mail (2.3776.700.51)
+X-CMAE-Envelope: MS4wfHGnHitpRiN5dlr9lXCGJnuhN6Rif1HzOuVVZ/3cTHMX6gdsc429Ms6b9Vn4v8ZqXE1/Lu9wb16GhHnEZFo9VjZHLwENfe7a8ZZOJ0mo4SoL9Jx8m7oy
+ p+IOs2RF9GxIt6EY23JuYZFEpFYbxppUz6Nafn2a8EGXZHAYbBU3FJcS+Z3lckEqOt5HMM7uKphEYQ==
+X-StripMime: Non-text section removed by stripmime
+Content-Type: text/plain;charset=utf-8
+
+
+￼       ￼
+
+Merycoidodon culbertsoni. Oligocene, S. Dakota. CM 2841, 1901
+
+￼
+
+
+
+Plaster cast of dino egg
+
+￼
+
+
+
+￼
+
+
+
+--- StripMime Report -- processed MIME parts ---
+multipart/alternative
+  text/plain (text body -- kept)
+  multipart/mixed
+    text/html
+    application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+    text/html
+    image/jpeg
+    text/html
+    image/jpeg
+    text/html
+    image/jpeg
+    text/html
+    image/png
+    text/html
+---
+
+
