@@ -1,0 +1,202 @@
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:a05:7022:128c:b0:123:3496:4ffa with SMTP id oy12csp3197055dlb;
+        Mon, 19 Jan 2026 03:14:00 -0800 (PST)
+X-Received: by 2002:a05:690c:d8b:b0:78e:3dcf:7aac with SMTP id 00721157ae682-793c5277ae9mr209797217b3.22.1768821239823;
+        Mon, 19 Jan 2026 03:13:59 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1768821239; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=LA7fdSeDrnrNunXTj1+a4QxmNNAqQLEWNNsJF1gtFEP2qnS7BFEGrrd1cvrJrp11sO
+         7tlA5X8xF1cyZ3cKOKKoMpsM3EXo/5eWmWicGJR3idO+b9xKCISCU+PybHtrg+0UdlwM
+         bH1BidMi9H1t+8JGZXvDiTpWYgzywUlyAiapEv+mmewLOa8a20g8ne/gKc028CJMHT0E
+         QmjmORNxoZ6w53eywin6KYS0C4LoZ/kNUP5S7/zQl4n7k00dU1GV982lBbcQ0HqdagsK
+         ITxyoVtKyTxtIJNi8rGKNPbe4nJsc1plv1FlLqnk2TOhJ9j085Ise4cPD09PcUGWlsk4
+         sW2g==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=UkXBBOP1qi8zQnwm4h3WEVcDn2T11gArI8tpuaynNeo=;
+        fh=vO0FhXNlA1p7sDdnlugLF+kUF4QIvyoZEn6eFDCpbjY=;
+        b=jojZYR+9X9gRvsLOOXzlr5BtaVQjz3l2Ksm2iUHivcUDNPMGn0NQ4DRM7rYzKuBwEi
+         hb3V9nQAhIEcml48bUGMoyqF1l87SPJJMRYOV0+J2RW11nQf7rPpIFhezSqJ9jlJTyx7
+         jZ39Yb3lZ3dCeEXcdxFB7gICJ+nNB2hWqmcebY/3T+dSHt6q7wtOY78ePkHaFAGep4Pa
+         H/xHnKkg++wuuXQtQa1AW4g9VdexOJmZ7ZL6kprNDuZkKZMCVJM9ZQ6Ra19nxV7U/ePy
+         aXwU02qZrGFthp9YIEzJUh+9fAhHc3v1DAkvY8IXxHIq/ZS/drzBJ0kYdHtsnjIUBl0T
+         VtgA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@huygens.knaw.nl header.s=selector1 header.b=TtrIr6Gt;
+       arc=pass (i=1 spf=pass spfdomain=huygens.knaw.nl dkim=pass dkdomain=huygens.knaw.nl dmarc=pass fromdomain=huygens.knaw.nl);
+       spf=pass (google.com: domain of ilja.nieuwland@huygens.knaw.nl designates 2a01:111:f403:c20f::7 as permitted sender) smtp.mailfrom=ilja.nieuwland@huygens.knaw.nl;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=huygens.knaw.nl
+Return-Path: <ilja.nieuwland@huygens.knaw.nl>
+Received: from OSPPR02CU001.outbound.protection.outlook.com (mail-norwayeastazlp170130007.outbound.protection.outlook.com. [2a01:111:f403:c20f::7])
+        by mx.google.com with ESMTPS id 00721157ae682-793c6762394si82709627b3.89.2026.01.19.03.13.59
+        for <sauropoda@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 19 Jan 2026 03:13:59 -0800 (PST)
+Received-SPF: pass (google.com: domain of ilja.nieuwland@huygens.knaw.nl designates 2a01:111:f403:c20f::7 as permitted sender) client-ip=2a01:111:f403:c20f::7;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@huygens.knaw.nl header.s=selector1 header.b=TtrIr6Gt;
+       arc=pass (i=1 spf=pass spfdomain=huygens.knaw.nl dkim=pass dkdomain=huygens.knaw.nl dmarc=pass fromdomain=huygens.knaw.nl);
+       spf=pass (google.com: domain of ilja.nieuwland@huygens.knaw.nl designates 2a01:111:f403:c20f::7 as permitted sender) smtp.mailfrom=ilja.nieuwland@huygens.knaw.nl;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=huygens.knaw.nl
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=PaR5ELSQ2w6AbQlmrrwa0PC2bonlaxdavutgsNTKECErGK0ff/m1+fmJ1BkOSZRtN119UlQFnUZWykxZr9OLiVapxmzSo2bwzxc9ehqrSZEuYJW6WtRq64Na5gJVOjnil13UkOXp9RxtFvOf39iBqeoQgSPrFNid2Hv/BCNUM6c6m+kK/I/LgNUEMSMx54vb0vNnHnMcePJmCbaedYAEq9Z0DxsI4rJDLxlfp/+aSXX6VNUL+lZlO/c+jEbeCYCwsAuc7PmFSLTcZWTvTaLJHG5vJ0HQZiGdbzLVsLF6zqD18Jb4QNJvqSgXT8X7MIX5YvmmcNPc+BsYCjB5WoFPgA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=UkXBBOP1qi8zQnwm4h3WEVcDn2T11gArI8tpuaynNeo=;
+ b=WojvKBKDBpSjJ/lHQ+3Rakkbvdf4DJLQ2QLHpHvc+WwyusUrFGuSAzAf6p+Lh01Db0cBOQSHDIN9rp0g63/DPSyDQHvMoerXFX3+oO3BoOd04GvL3vD8nqPwsu5vng5DsBufj2jh6CYMZCuXljUtYawCW6qU/lifI3RDPE6jsadUSHfp8WeqLE4yLHdNQRNTEqKzvOzezymzAISxJEeo6DJjPdSa47K2jAdRNxSkUUl/IQEX8z8SVLBwINy1zONOP0lGDn7S87cNMPdooCwKZ35av4MUFabtxui4LD0sWAbOFg28uPDFeuzuIadN5s9qj8pjhQEH7DCh+XJmZ+/Xmw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=huygens.knaw.nl; dmarc=pass action=none
+ header.from=huygens.knaw.nl; dkim=pass header.d=huygens.knaw.nl; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=huygens.knaw.nl;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=UkXBBOP1qi8zQnwm4h3WEVcDn2T11gArI8tpuaynNeo=;
+ b=TtrIr6GtI4KwTYhu8p4WpD3vIzzVd83u9Xz3Klx+PRjaO23JdEv0+wuNiZBdl3ZSsDhT+L5T2N7urkLSGtfGtrMIOT4rc0JiKf/lXW9LEu5Q8YwFr5AZVkgvS5mkSB2LbqF0ObWar/+mNfrtb41WUJsR4XCztmiL4MM09w9u1oiXsX6AUHt51sy1xyrwX6r7usIEqp36Eh8jzS4GDVnRX0ogOeHUG6SXhKM6oC5QvdBLu6BGtt5ffNG5qGdSRvoSxOXNSGGYqMx4zjCvmU9O9iP/4sP+7njG6J1oPpzCLssHmmyeisGOxs3kGyHG6dhLxTR2EKJO+uiJQ2wS/IgimQ==
+Received: from DU0PR02MB9345.eurprd02.prod.outlook.com (2603:10a6:10:414::20)
+ by GV1PR02MB8906.eurprd02.prod.outlook.com (2603:10a6:150:a4::21) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9520.11; Mon, 19 Jan
+ 2026 11:13:54 +0000
+Received: from DU0PR02MB9345.eurprd02.prod.outlook.com
+ ([fe80::7335:2bad:ab0e:c4e9]) by DU0PR02MB9345.eurprd02.prod.outlook.com
+ ([fe80::7335:2bad:ab0e:c4e9%5]) with mapi id 15.20.9520.005; Mon, 19 Jan 2026
+ 11:13:54 +0000
+From: Ilja Nieuwland <ilja.nieuwland@huygens.knaw.nl>
+To: "sauropoda@gmail.com" <sauropoda@gmail.com>
+Subject: St. Petersburgh / Moscow Diplodocus
+Thread-Topic: St. Petersburgh / Moscow Diplodocus
+Thread-Index: AQHciTNdVMNUCQvZ2kycYpFaaJT+0g==
+Date: Mon, 19 Jan 2026 11:13:54 +0000
+Message-ID:
+ <DU0PR02MB93454732C960DEFE16F18A83D788A@DU0PR02MB9345.eurprd02.prod.outlook.com>
+Accept-Language: en-US, de-DE
+Content-Language: en-GB
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=huygens.knaw.nl;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: DU0PR02MB9345:EE_|GV1PR02MB8906:EE_
+x-ms-office365-filtering-correlation-id: f60e9695-e3fb-4b37-4509-08de574bd56e
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|786006|1800799024|376014|366016|38070700021|8096899003;
+x-microsoft-antispam-message-info:
+ =?Windows-1252?Q?OV244FoMQoYdjfc9Ym6YuuIfy9S1RheAAl5wY3QXCLa8f4k/clHxaZqG?=
+ =?Windows-1252?Q?vlEyFaq7uw+ewpvczC+VN7Ue1OtWOYwN4Cf162OFxUzS+E5ibCjL663Q?=
+ =?Windows-1252?Q?KIKYNh2VLnlOnS0n2GGI83i+86+lyahuKobbZRAsQy4GMFPBzvlxwcUW?=
+ =?Windows-1252?Q?JSKrjfJhbcWRzvBfG8uMCgiHS6flTKxslOeL3Gg37OQqm3pjMM/GUx43?=
+ =?Windows-1252?Q?oCa4te7fJh+WkI1oAqPLDXiVzMLt1b5WVqhbAOzRuBuVIHHx4deHlzUh?=
+ =?Windows-1252?Q?BrDMDMrOwgvsqqA0pWzeqqwalDfgf7VPP2TCLJkXHsbG+j63bBAmShhj?=
+ =?Windows-1252?Q?xmDVsTLCp9RFEVIQbWtAjalddoiwrXxJxKyHRXTIBfiLbETCSxNDCStG?=
+ =?Windows-1252?Q?ikH6isG/G2XAcIHsSZ7YJ74e6LPHEDFstbebH8m47ruyGWv9wcQlclYt?=
+ =?Windows-1252?Q?dxxfuY3QbaGXXOXAGWS8EeNyGVcRZqkMJ8A893bmB0Aet7EEyI0YZFY1?=
+ =?Windows-1252?Q?jcpLY5CZJiG/9xrzvoacOS11kS6/gl698x3lgBZTnNqhatml+D7ttp5r?=
+ =?Windows-1252?Q?fegq6TSdMokKfV6rt07j0hzwt3dAsk+oDms2fhyFy0m4rIVrgTW2sJOM?=
+ =?Windows-1252?Q?xpwfXZOYiPb4qAcui66P+yxDfSNa6C5csU/j91eTH0jHMVJCV+wFD9B7?=
+ =?Windows-1252?Q?DQyo+CA5Fte/pu9BVH8fKWxAeeCXJQCGNfkGKW37E1rb6rigBbMIDv43?=
+ =?Windows-1252?Q?Gvu9RJtryKWMpHIkGEj2SjyPwDX42IEmOx8OQkb/PkfxN1lIvADTBftb?=
+ =?Windows-1252?Q?UPB0kZXVifsB3Wn73gVz8sjWk9cz1S4BtE8zNVVNDH3kkRMzTKnuVKwM?=
+ =?Windows-1252?Q?T2+WhVf/fcP3SlJYQXkxcy+vUIVOWuCvmUBIEnvXlO+z4eRNZUeBy/YC?=
+ =?Windows-1252?Q?0yFeG0Oa2u4SDiu8/6HshJeOuZVIDXGas2pgEss7MuAx6FnvPj9G34Mu?=
+ =?Windows-1252?Q?zqbkE9Tg25VMPBHdU33B8DXFzJWIhcjqwxmwo6BvvkGtK7WUhiw07aRo?=
+ =?Windows-1252?Q?u14cajY68hP+XeJlmhZXuSv4eyExlN/o1SQ9knMq+vxpYVfrfDvVLIbH?=
+ =?Windows-1252?Q?B5F98FB46XJush0pld+S+bO+aXK2BlLv6uz76RZaeAoFE9iHF5scEsO7?=
+ =?Windows-1252?Q?kdn4xGTrCqf71z+VslqbfB6Wum1Kiq1Gx7dXOTni18XVGaA7zDxd3IC8?=
+ =?Windows-1252?Q?Zg50yXboNPzlhHNuGJ1A07iL+cBCPW6P90w2D4+oq2XCB2DcvlcmTukg?=
+ =?Windows-1252?Q?xj8ldwsX+h8LEoUc9raujpDZrblSoCYyeUHabDTg5owN1LL7tWztUqmU?=
+ =?Windows-1252?Q?pMsMo+4waouLl+YYv5ptlbzlmEaGq1s5OLqNoloJT3ZhBK7nf2Awh00A?=
+ =?Windows-1252?Q?+Fs/LrVduMGsgR14mmyRazpZMy2oowRuqxLGybhl/C/n7pGJ0HU0Ocmt?=
+ =?Windows-1252?Q?+Cpcl7UTo/2gMZJEaFQywFnoRSeJjBsqCXuJq3BYHjfh93sendXCQqC/?=
+ =?Windows-1252?Q?hM+sqlz4vpRIvNouSJpoeqwb9TpMdZV3hVTfHMI+SAvUw2fFNK4X47/h?=
+ =?Windows-1252?Q?/xNSEgtsZbwWG0G6rCzwR4nK9HCItKCUS0fBq7IaUxjhTxrxAvevNzQq?=
+ =?Windows-1252?Q?0/IHGFrQ7eto7z0vxluOgXGmYc7EmZdipMxotJMQUeRBCzTZa11SLftd?=
+ =?Windows-1252?Q?MtFenNw3PKzZGxt7A3U=3D?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DU0PR02MB9345.eurprd02.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(786006)(1800799024)(376014)(366016)(38070700021)(8096899003);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?Windows-1252?Q?XoI3j6s7GKD4aZc6B/eWNkR37amYmmdX4sb+Rrg8FSQqb4UPPofi/b24?=
+ =?Windows-1252?Q?+6l0FRy90yjk84qBFYa7jpUg+SIYiQuv3zzLLfdCtV3CBMGvK4riu2PZ?=
+ =?Windows-1252?Q?hsVvEIq/dlEJUfHH4jfrmdsppTM8QCNrMwHnZxbO/twICQvu9+5HUS5A?=
+ =?Windows-1252?Q?KU5iHp02i4X+SFgDdwnNsXIdgFPkXVwcUCUGhzaRWOECRL/TQMyV2ziC?=
+ =?Windows-1252?Q?rku+WEcO6znIue7D9nZRj+kbtJ1i3dVCGObNesE6UsTB5PDn8XNwNTDM?=
+ =?Windows-1252?Q?ZmoI4oNj7QL6ron27h6zaIvkg23m8J7rkujuGsyZaaqGYldgwn0OF/+2?=
+ =?Windows-1252?Q?rIXDHJdUYgbsnfvO5en4eBWYQKB7qVgfagCxIAwhaAB8V2DVBQTHmbEG?=
+ =?Windows-1252?Q?BAO/OlXMf1P4X+V0l8Dd1pp0JwIRu28oUoHQ08/k8mXnGL69vqH9LHTU?=
+ =?Windows-1252?Q?1QpQmJdPZF1Zh7rWGzLTlUzNdZGVG3n2tFQOwLeXuXBmDOS77ZiFFqJ3?=
+ =?Windows-1252?Q?BA0q8322jA5e5Vf0fm1YPhPYnxLBwARs05o2CaRMl2eEys/eLfQgrW+P?=
+ =?Windows-1252?Q?h7InEYnbVWDIW4VqfArOyeAq4nlhY6VgEEOxcFWtkpF/+qTOXuvYrjJ4?=
+ =?Windows-1252?Q?ZyFe8M3SDMv4suPDjbFoVMHtmgasBtjrk1E8jCabUkQ8jM8+E+PEi8eo?=
+ =?Windows-1252?Q?Nbi/M0Qrm8Q34n2QAM6DLlvaz62sE5qFeYfTUT/3ielPeVjNU7tg3pdT?=
+ =?Windows-1252?Q?zerIYJ5octPWpe08AOdY0qiqeQxitCUdYXQa8r3CbV9aS65d1+Z5PWS1?=
+ =?Windows-1252?Q?J9gHlb4rHf7+z6C8pHgLBqc3IoWoLMgJ41q+lRgx47G4WpJmcJVdpoN/?=
+ =?Windows-1252?Q?liHEx9BduA3Ban4w1IzucaVK5BXci67PLDVceIj2pixbEWadSG5vm5Pj?=
+ =?Windows-1252?Q?5tSuBA+ZZz7GxnurJL/U2qjkfHsm3Bm4jWKoAmd4Zwl09iakqVZVquW8?=
+ =?Windows-1252?Q?gxH8+Hrr9fBCzuPGi7Xh4BA8S+UTnpW2D1ECLq5H60PF2bMnILvHRCdw?=
+ =?Windows-1252?Q?skJcSOlgM4jLMSr+TiVqnUDDO1WLXuvwIi3zbtghv6AlQy8vRz8LivxL?=
+ =?Windows-1252?Q?f93I0QoXkkk7js7lU/YhyAfqu1Kw6+LA/Vc4TNh0gG4Kl+I5z+MpQq/b?=
+ =?Windows-1252?Q?IsZA4I3M7lMPDx5yEJRJtE4PT2dtZimIQALEi5PBXxeVScs0ewTDg/xs?=
+ =?Windows-1252?Q?+wN6STOyXVEHJHXx5hwhazAqnJfpfIrBrnvfBJIsPlgDKIROHExz8eqt?=
+ =?Windows-1252?Q?6TZTOZEjLSsV6AlRMXkIp84t6kO+wzewPwJoQRQ+yiSgMZw/nnVceVU2?=
+ =?Windows-1252?Q?WmDkv94GFzytCAl8Cn+f1gKXundqS3F7LQT/gdiMMa+5KK5cma80C+iU?=
+ =?Windows-1252?Q?GNAoB2qnzM/pn/8CZ1Br7gSVpeze533XzZkd5+f87VdfQhUxumc873id?=
+ =?Windows-1252?Q?7GfWojsPMfJAA6VSjWVX3t+Xg9rBD8A+D8HMR1NVWfM0BoF7mhBxgfxf?=
+ =?Windows-1252?Q?TdGnLwVwwEpznfaVZchSE61Nzj68UNxE6rlGAKKkoq6SeHsYC116krsz?=
+ =?Windows-1252?Q?jveZGyYwHGiSrwhSzglM4V32S4JnpfExtSaidc2G5WT6dv1fribRrFub?=
+ =?Windows-1252?Q?CnG6yduHmlFOaAPxZ/q8y+U5VO1lDHxt2ew9iiuiPcR5rdrrveyV8k+P?=
+ =?Windows-1252?Q?FWuyF6cUF7avTTNzHoSLcaIgSXOpxREcxPKy76kdoVYpTue110rBKbze?=
+ =?Windows-1252?Q?+tPPnZXeGlpC03JVRHs4gnv+42clJWI7jCQeiHpENY0erKmAgIVz5Jx5?=
+ =?Windows-1252?Q?gPztAnnb6ELLpVsuRF1Si0MoFvpEYYZK2z0l2LQAAtR8XCrpQ7X08Ya3?=
+MIME-Version: 1.0
+X-OriginatorOrg: huygens.knaw.nl
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: DU0PR02MB9345.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f60e9695-e3fb-4b37-4509-08de574bd56e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Jan 2026 11:13:54.7717
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: ea8750c8-e3f4-4ff5-a43f-e8820be09f7e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: UQttXjx6SyOujThWq5o7Y421p/UtvbnaAQX80Nk7PuCyUKIdpxso2+f9J9MXxWzYn3gzMcQ5eSK6R4zvSFklLsfwhAAYLWolZgCXNR51F2Q=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1PR02MB8906
+Content-Type: text/plain; charset="Windows-1252"
+
+Hello Mike,
+
+
+My attention was drawn today to an article (https://flibusta.is/b/675083/read), which sheds a bit more light on the reception and early history of the Diplodocus carnegii cast in Russia. Of course it’s in Russian, but I translated this bit (see below). Shame I only got to learn of this so recently, as it does clear up a few things.
+
+
+Best,
+
+Ilja
+
+
+===
+
+
+The museum essentially remained a warehouse, staffed by one curator, two preparators, and a few other employees. Even the director didn't have his own office; he had to work in the aisles of the exhibition halls (587) . In 1908, immediately after returning from Novocherkassk to Warsaw, Amalitsky began clearing the halls of the university library. By that time, preparators had cleared fifteen skeletons, thirty skulls, and many individual bones of debris. In the autumn, the first two pareiasaur skeletons and one Inostranseviya skeleton were dismantled, secured, packed, and sent at low speed by rail to St. Petersburg. At the Geological Museum, they immediately took up half of the largest hall.
+
+
+To accommodate them, four display cases had to be moved to the adjacent hall. The museum's report described this as follows: "The receipt of Professor V. P. Amalitsky's valuable collection left the Museum, one might say, completely unprepared and unsuited" (588). Chernyshev considered that the museum could accept, at best, three or four more skeletons from Warsaw, and they would have to be placed close to each other, and after that "it would be deprived of the opportunity to accept within its walls even one skeleton, of which, however, no less than thirty are expected in total, not counting the mass of individual bones" (589) . New skeletons were not slow in appearing. In 1909, six more complete pareiasaur skeletons were brought from Warsaw, along with a large concretion containing a skeleton and its "reverse plaster cast" (i.e., a cast of the underside), three separate skulls, six pelvises, and twelve scapulae of various lizards.
+
+
+They filled two halls, and some, by chance, found their way back to the library, now of the Geological Museum.
+
+The skeletons had no display cases. They were placed on planks, raised slightly above the floor with sawhorses. The passages between them were narrow, and it was possible to accidentally "touch and damage one or another protruding part." Furthermore, the old parquet floor shook with footsteps, the vibrations transmitting to the "skeletons, whose loose, in many places glued bones" were "suffering" (590) . Four expensive display cases with retractable floors were ordered for the skeletons. They were beautifully designed, but they were unusable: due to the cramped space, the floor would extend halfway and bump into another display case. To install the new display cases, the old ones had to be rearranged. They were first stacked in two tiers, then three, and some were dismantled and stored.
+
+
+Unfortunately, at the same time, another valuable exhibit was given to the Geological Museum - a plaster cast of the skeleton of a diplodocus ( Diplodocus carnegiei). It was an "original American gift" [591) to Emperor Nicholas II from the philanthropist Carnegie.
+
+
+The Emperor gave the gift to the Academy, which ordered it sent to the Geological Museum, which was unable to accept it due to lack of space. The gift was enormous - 25 meters long and weighing 20 tons. America was already famous for its giant dinosaurs. As the magazine Around the World wrote, there has always been something enormous about this country: "One must assume that America has always been a country of everything grandiose: its population is now taking giant strides along the path of progress; twenty-story buildings are being built in its cities; its sons are quickly amassing colossal fortunes, amounting to billions; and many centuries ago, giants lived in this same America, in comparison with whom today's elephants would seem like pitiful pygmies" (592). Diplodocus was one of the largest. Newspapers joked that children "look almost like flies" next to its skeleton (593) . The skeleton had to be displayed in the Academy's presidium. It had been brought from the United States in disassembled form, the bones packed into "boxes, sacks, and tins" (594). They were reassembled under the supervision of American specialists. The work was difficult: the Americans spoke only English, while the Russian preparators, Knyrko and Pets, spoke only Russian (595) . They apparently communicated with gestures. A plaster skeleton blocked all the windows facing the Neva embankment. The vertebrae, supported by iron bars, almost touched the ceiling. The skull rested against one wall, the tail against the opposite one, and had to be tucked under to fit [596) . The skeleton was placed in the presidium temporarily. But nothing is more permanent than temporary. The diplodocus stood there for fifteen years and was a nuisance.
+
+
+At the beginning of the First World War, the hall was converted into a forty-bed infirmary, and the Academy ordered the diplodocus dismantled. They even called in Knyrko, the preparator, who was recovering from a painful arm operation (597) , from his vacation for this purpose . The Geological Museum insisted that it was highly undesirable to disturb the fragile plaster casts. The preparators removed only the neck and tail; the rest was covered with a cardboard case [598] In response to the Academy's persistent requests to continue dismantling, the museum responded by demanding that the hall be cleared of the infirmary for two or three weeks, which was impossible. As a result, the neckless and tailless diplodocus remained on display in the presidium throughout the war. In 1909, Amalicki moved his entire workshop from the Warsaw library to the building of the Polytechnic Institute. The new workshop was equipped with an electric motor "for mechanical processing of stone," "cabinets for fixing and drying bones," and a photographic laboratory, blacksmith's shop, and metalworking shop [599]. Four preparators worked here, cleaning and gluing bones, preparing plaster copies of them, mounting them, packing them, and repackaging them. "A great many" photographs were taken, including stereoscopic ones, which produced "visual results, especially in reproducing the deep contour forms of skeletons and skulls" [600) . Small bronze figurines of pareiasaurs were made [601) .
+
