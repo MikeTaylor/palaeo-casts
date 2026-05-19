@@ -5,3 +5,6 @@ Anonymous. 1969b. The Head Bone Connected To .... Houston Chronicle, Sunday 19 J
 	../sources/ebay/IMG_0443--wedel-front.jpeg
 	../sources/ebay/IMG_0446--wedel-back.jpeg
 
+Scarlett, Harold. 1969. Assembling a dinosaur. The Houston Post, Sunday 16 November 1969, pp. 8-13.
+	Scarlett1969-assembling-a-dinosaur.pdf
+
